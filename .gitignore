@@ -1,9 +1,11 @@
 *.class
 .idea
 *.iml
+target/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# jcstress artifacts
+jcstress.*
+results/
 
 # Package Files #
 *.jar
