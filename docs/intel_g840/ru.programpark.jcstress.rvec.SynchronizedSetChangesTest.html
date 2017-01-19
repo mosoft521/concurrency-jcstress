@@ -1,0 +1,522 @@
+<html>
+<head>
+    <title>Java Concurrency Stress test report</title>
+    <style type="text/css">
+        * {
+            font-family: Arial;
+        }
+
+        table {
+            font-size: 9pt;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        .progress {
+            padding: 0px;
+        }
+
+        .header {
+            text-align: left;
+        }
+
+        .section1 {
+            font-size: 12pt;
+            background-color: #BDB76B;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .section2 {
+            font-size: 12pt;
+            background-color: #F0E68C;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .cell1 {
+            background-color: #FAFAD2;
+        }
+
+        .cell2 {
+            background-color: #EEE8AA;
+        }
+
+        .passedProgress {
+            background-color: #00AA00;
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .failedProgress {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .passed {
+            color: #00AA00;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .failed {
+            color: #FF0000;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .interesting {
+            color: #0000FF;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .spec {
+            color: #AAAA00;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .endResult {
+            font-size: 48pt;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>ru.programpark.jcstress.rvec.SynchronizedSetChangesTest</h1>
+<p>null</p>
+<p>JVM options: [-Xint]
+    Iterations: 5
+    Time: 2500</p>
+<table width=100%>
+    <tr>
+        <th width=250>Observed state</th>
+        <th width=50>Occurrence</th>
+        <th width=50>Expectation</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr bgColor=#c0c0c0>
+        <td>-1, -1, 2, 2</td>
+        <td align=center>0</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, 2</td>
+        <td align=center>3193508</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, 2, -1</td>
+        <td align=center>192</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, 1, 2, 2</td>
+        <td align=center>3971769</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first change invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, -1, 2</td>
+        <td align=center>3</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, 2, 2</td>
+        <td align=center>98</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#c0c0c0>
+        <td>1, 1, -1, -1</td>
+        <td align=center>0</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, 2</td>
+        <td align=center>1506000</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second change invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, 2, 2</td>
+        <td align=center>940</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>both changed and invisible</td>
+    </tr>
+</table>
+<p>JVM options: [-client]
+    Iterations: 5
+    Time: 2500</p>
+<table width=100%>
+    <tr>
+        <th width=250>Observed state</th>
+        <th width=50>Occurrence</th>
+        <th width=50>Expectation</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, -1, 2, 2</td>
+        <td align=center>2</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, -1</td>
+        <td align=center>28</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, 2</td>
+        <td align=center>47382</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, 2, -1</td>
+        <td align=center>24</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, 1, 2, 2</td>
+        <td align=center>30670277</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first change invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, -1, 2</td>
+        <td align=center>2</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, 2, 2</td>
+        <td align=center>140</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#c0c0c0>
+        <td>1, 1, -1, -1</td>
+        <td align=center>0</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, 2</td>
+        <td align=center>33841889</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second change invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, 2, 2</td>
+        <td align=center>306</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>both changed and invisible</td>
+    </tr>
+</table>
+<p>JVM options: [-server]
+    Iterations: 5
+    Time: 2500</p>
+<table width=100%>
+    <tr>
+        <th width=250>Observed state</th>
+        <th width=50>Occurrence</th>
+        <th width=50>Expectation</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, -1, -1, 2</td>
+        <td align=center>3</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, -1, 2, 2</td>
+        <td align=center>7</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, -1</td>
+        <td align=center>147</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, 2</td>
+        <td align=center>3124</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, 2, -1</td>
+        <td align=center>7</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, 1, 2, 2</td>
+        <td align=center>28726888</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first change invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, -1, 2</td>
+        <td align=center>22</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, 2, 2</td>
+        <td align=center>609</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, -1</td>
+        <td align=center>4</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, 2</td>
+        <td align=center>40448396</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second change invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, 2, 2</td>
+        <td align=center>243</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>both changed and invisible</td>
+    </tr>
+</table>
+<p>JVM options: [-client, -XX:-TieredCompilation]
+    Iterations: 5
+    Time: 2500</p>
+<table width=100%>
+    <tr>
+        <th width=250>Observed state</th>
+        <th width=50>Occurrence</th>
+        <th width=50>Expectation</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr bgColor=#c0c0c0>
+        <td>-1, -1, 2, 2</td>
+        <td align=center>0</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, -1</td>
+        <td align=center>96</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, 2</td>
+        <td align=center>2588</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, 2, -1</td>
+        <td align=center>2</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, 1, 2, 2</td>
+        <td align=center>31892216</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first change invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, -1, 2</td>
+        <td align=center>4</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, 2, 2</td>
+        <td align=center>351</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#c0c0c0>
+        <td>1, 1, -1, -1</td>
+        <td align=center>0</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, 2</td>
+        <td align=center>53695875</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second change invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, 2, 2</td>
+        <td align=center>168</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>both changed and invisible</td>
+    </tr>
+</table>
+<p>JVM options: [-server, -XX:-TieredCompilation]
+    Iterations: 5
+    Time: 2500</p>
+<table width=100%>
+    <tr>
+        <th width=250>Observed state</th>
+        <th width=50>Occurrence</th>
+        <th width=50>Expectation</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, -1, 2, 2</td>
+        <td align=center>8</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, -1</td>
+        <td align=center>123</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, 2</td>
+        <td align=center>3165</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, 2, -1</td>
+        <td align=center>6</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, 1, 2, 2</td>
+        <td align=center>32004560</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first change invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, -1, 2</td>
+        <td align=center>3</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, 2, 2</td>
+        <td align=center>457</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, -1</td>
+        <td align=center>1</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, 2</td>
+        <td align=center>43683934</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second change invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, 2, 2</td>
+        <td align=center>243</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>both changed and invisible</td>
+    </tr>
+</table>
+<p>JVM options: [-XX:TieredStopAtLevel=1]
+    Iterations: 5
+    Time: 2500</p>
+<table width=100%>
+    <tr>
+        <th width=250>Observed state</th>
+        <th width=50>Occurrence</th>
+        <th width=50>Expectation</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, -1, 2, 2</td>
+        <td align=center>11</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, -1</td>
+        <td align=center>3</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, -1, 2</td>
+        <td align=center>114501</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>-1, 1, 2, -1</td>
+        <td align=center>81</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>-1, 1, 2, 2</td>
+        <td align=center>37978979</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>second changed, first change invisible</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, -1, 2</td>
+        <td align=center>2</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ffff>
+        <td>1, -1, 2, 2</td>
+        <td align=center>80</td>
+        <td align=center>ACCEPTABLE_INTERESTING</td>
+        <td>interesting behaviour</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, -1</td>
+        <td align=center>12</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, -1, 2</td>
+        <td align=center>42291587</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>first changed, second change invisible</td>
+    </tr>
+    <tr bgColor=#00ff00>
+        <td>1, 1, 2, 2</td>
+        <td align=center>124</td>
+        <td align=center>ACCEPTABLE</td>
+        <td>both changed and invisible</td>
+    </tr>
+</table>
+</body>
+</html>
