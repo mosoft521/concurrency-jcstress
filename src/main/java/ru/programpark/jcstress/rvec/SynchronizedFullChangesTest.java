@@ -41,6 +41,10 @@ public class SynchronizedFullChangesTest extends BaseTable {
             return super.reset();
         }
 
+        @Override
+        public synchronized void update(BaseTable table, LongResult4 res) {
+            super.update(table, res);
+        }
     }
 
 }
